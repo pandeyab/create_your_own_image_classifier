@@ -28,19 +28,24 @@ This project contains three files:
 
 
 
-Run
+Executions:
+*notebook image_classifier.ipynb -->
 In a terminal or command window, navigate to the top-level project directory image_classifier/ (that contains this README) and run one of the following commands:
 
 ipython notebook image_classifier.ipynb
-
 or
 
 jupyter notebook image_classifier.ipynb
 
-This will open the iPython Notebook software and project file in your browser.
+*train.py -->
+$  python train.py flowers --gpu True --epochs 2 --learning_rate 0.001 --arch 'vgg16' --hidden_units '4200, 3000, 1000' --output_units 202
+
+*predict.py -->
+$ python predict.py flowers/test/17/image_03864.jpg checkpoint.pth --category_names cat_to_name.json --top_k 5 --gpu True
+
 
 Data
 
 *cat_to_name.json: a json file containing names 
+*checkpoint.pth :saved checkpoint location
 
-Features
